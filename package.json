@@ -1,0 +1,17 @@
+{
+  "name": "mimimizer",
+  "version": "1.0.0",
+  "description": "Mimimizer Telegram Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "rm -rf dist && tsc -b tsconfig-base.json",
+    "start": "npm run prepare && node dist/src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node-telegram-bot-api": "^0.51.1",
+    "node-telegram-bot-api": "^0.52.0"
+  }
+}
