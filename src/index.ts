@@ -1,8 +1,10 @@
 import TelegramBot from 'node-telegram-bot-api';
 import config from './config';
 
-const token = config.token;
-const bot = new TelegramBot(token, { polling: true });
+const TOKEN = config.token;
+const bot = new TelegramBot(TOKEN, {
+  polling: true,
+});
 
 const REGEX = [
   { input: /[aeou]/g, output: 'i' },
@@ -23,6 +25,7 @@ bot.onText(/\/mimimize/, (msg) => {
     : msg.text?.split('/mimimize ')[1];
   const mimimizedMsg = mimimize(msgReceived as string);
   console.log(`Message Received: ${msgReceived}`);
+  console.log(`Message Mimimized: ${mimimizedMsg}`);
   bot.sendMessage(msg.chat.id, `${mimimizedMsg}`);
 });
 
