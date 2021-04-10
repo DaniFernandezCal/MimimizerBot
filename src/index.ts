@@ -19,7 +19,10 @@ const REGEX = [
   { input: /[ÀÈÒÙ]/g, output: 'Ì' },
 ];
 
+bot.on('polling_error', console.log);
+
 bot.onText(/\/mimimize/, (msg) => {
+  console.log(JSON.stringify(msg, null, 1));
   const msgReceived = msg.reply_to_message
     ? msg.reply_to_message.text
     : msg.text?.split('/mimimize ')[1];
